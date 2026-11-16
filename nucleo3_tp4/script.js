@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     draggable.addEventListener("dragend", (e) => {
       e.currentTarget.classList.remove("hide");
-      // Ya no llamamos a checkOrder() aquí, ahora lo hace el botón
     });
   });
 
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Evento del botón Verificar
+  //Verificar.
   verifyBtn.addEventListener("click", () => {
     if (nextStep) {
       window.location.href = "nucleo3.4-op.html";
@@ -208,12 +207,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Función para bloquear el juego al terminar
+  //Función para bloquear el juego al terminar.
   function endGame() {
     gameOver = true;
     sessionStorage.setItem(attemptsStorageKey, String(intentoActual));
     updateVerifyButton();
-    // Opcional: quitar el estilo visual de "cursor: grab"
+
     draggables.forEach((d) => (d.style.cursor = "default"));
   }
 
